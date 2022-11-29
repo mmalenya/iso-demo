@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>List Users</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+
+    <div sec:authorize="isAuthenticated()">
+        <b> Access Denied:  </b>
+
+    </div>
+    <div>
+        <h5> You are not authorized  to view users. Click <a th:href="@{/iso-users}">home</a> </h5>
+    </div>
+
+
+    <div>
+        <form th:action="@{/view-users}" method="get">
+            <input type="submit" value="view users" />
+        </form>
+    </div>
+
+    <div>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out" />
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

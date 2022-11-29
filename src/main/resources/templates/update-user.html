@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/shards.min.css">
+</head>
+<body>
+<div class="container my-5">
+    <h2 class="mb-5">Update User</h2>
+    <div class="row">
+        <div class="col-md">
+            <form action="#" th:action="@{/update/{userid}(userid=${user.userId})}" th:object="${user}" method="post">
+                <div class="row">
+                    <div class="form-group col-md-2">
+                        <label for="firstname" class="col-form-label">user id</label>
+                        <input type="text" th:field="*{userId}" class="form-control" id="userid" placeholder="usr id">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="firstname" class="col-form-label">First Name</label>
+                        <input type="text" th:field="*{firstName}" class="form-control" id="firstname" placeholder="firstName">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="lastname" class="col-form-label">Last Name</label>
+                        <input type="text" th:field="*{lastName}" class="form-control" id="lastname" placeholder="lastName">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="password" class="col-form-label">Password</label>
+                        <input type="password" th:field="*{password}" class="form-control" id="password" >
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="role" class="col-form-label">Role</label>
+                        <input type="text" th:field="*{role}" class="form-control" id="role" placeholder="Email">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="username" class="col-form-label">username</label>
+                        <input type="text" th:field="*{username}" class="form-control" id="username" placeholder="Email">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-5">
+                        <input type="submit" class="btn btn-primary" value="Update User">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
